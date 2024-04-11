@@ -20,6 +20,10 @@ Route::get('/', function () {
 
 Route::get('list', [CrudUserController::class, 'listUser'])->name('user.list');
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> TienPhu
 Route::get('login', [CrudUserController::class, 'login'])->name('login');
 Route::post('login', [CrudUserController::class, 'authUser'])->name('user.authUser');
 Route::get('signout', [CrudUserController::class, 'signOut'])->name('signout');
