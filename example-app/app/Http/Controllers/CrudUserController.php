@@ -9,11 +9,7 @@ use Illuminate\Http\Request;
 
 class CrudUserController extends Controller
 {
-<<<<<<< HEAD
- 
-=======
 
->>>>>>> TienPhu
     public function updateUser(Request $request)
     {
         $user_id = $request->get('id');
@@ -48,10 +44,6 @@ class CrudUserController extends Controller
         return redirect("list")->withSuccess('You have signed-in');
     }
 
-<<<<<<< HEAD
- 
-=======
->>>>>>> TienPhu
     public function readUser(Request $request) {
         $user_id = $request->get('id');
         $users = User::find($user_id);
@@ -75,15 +67,11 @@ class CrudUserController extends Controller
              return view('crud_user.list', ['users' => $users]);
         }
        
-<<<<<<< HEAD
+
         return redirect()->route('user.list')->with('success', 'You are not allowed to access');
         
      }
-     
-}
-=======
-        return redirect()->route('user.list')->with('success', 'Bạn không được phép truy cập');
-     }
+   
 
 
 
@@ -153,4 +141,4 @@ class CrudUserController extends Controller
     }
 }
 }
->>>>>>> TienPhu
+
