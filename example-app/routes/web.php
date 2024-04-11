@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CrudUserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +15,25 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('crud_user.create');
 });
+//Tran Huu Kien
+Route::get('list', [CrudUserController::class, 'listUser'])->name('user.list');
+
+//Login(Tran Huu Nam)
+Route::get('login', [CrudUserController::class, 'login'])->name('login');
+Route::post('login', [CrudUserController::class, 'authUser'])->name('user.authUser');
+Route::get('signout', [CrudUserController::class, 'signOut'])->name('signout');
+
+//create(Pham Thanh Liem)
+Route::get('dashboard', [CrudUserController::class, 'dashboard']);
+Route::get('create', [CrudUserController::class, 'createUser'])->name('user.createUser');
+Route::post('create', [CrudUserController::class, 'postUser'])->name('user.postUser');
+
+//Pham Thi Bich Buoc
+Route::get('read', [CrudUserController::class, 'readUser'])->name('user.readUser');
+Route::get('delete', [CrudUserController::class, 'deleteUser'])->name('user.deleteUser');
+
+//Pham Thi Thanh Tam
+Route::get('update', [CrudUserController::class, 'updateUser'])->name('user.updateUser');
+Route::post('update', [CrudUserController::class, 'postUpdateUser'])->name('user.postUpdateUser');
