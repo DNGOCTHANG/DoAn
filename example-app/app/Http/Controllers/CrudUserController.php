@@ -70,9 +70,5 @@ class CrudUserController extends Controller
        
         return redirect()->route('user.list')->with('success', 'Bạn không được phép truy cập');
      }
-
-
-
-
      
 }
