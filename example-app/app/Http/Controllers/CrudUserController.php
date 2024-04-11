@@ -68,7 +68,8 @@ class CrudUserController extends Controller
              return view('crud_user.list', ['users' => $users]);
         }
        
-        return redirect()->route('user.list')->with('success', 'Bạn không được phép truy cập');
+        return redirect()->route('user.list')->with('success', 'You are not allowed to access');
+        
      }
      
 }
