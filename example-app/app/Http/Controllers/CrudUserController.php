@@ -31,7 +31,7 @@ class CrudUserController extends Controller
        $user = User::find($input['id']);
        $user->name = $input['name'];
        $user->email = $input['email'];
-       $user->password = Hash::make($input['password']);
+       $user->password = $input['password'];
        $user->phonenumber = $input['phonenumber'];
        if ($request->hasFile('image')) {
         $image = $request->file('image');
@@ -68,15 +68,8 @@ class CrudUserController extends Controller
              return view('crud_user.list', ['users' => $users]);
         // }
        
-<<<<<<< HEAD
-
-        return redirect()->route('user.list')->with('success', 'You are not allowed to access');
-        
-=======
        //  return redirect()->route('user.list')->with('success', 'Bạn không được phép truy cập');
->>>>>>> TienPhu
      }
-   
 
 
 
@@ -148,4 +141,3 @@ class CrudUserController extends Controller
     }
 }
 }
-
