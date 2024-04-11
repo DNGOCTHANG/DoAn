@@ -62,12 +62,12 @@ class CrudUserController extends Controller
 
     public function listUser()
      {
-        if (Auth::check()) {
+        // if (Auth::check()) {
              $users = User::all();
              return view('crud_user.list', ['users' => $users]);
-        }
+        // }
        
-        return redirect()->route('user.list')->with('success', 'Bạn không được phép truy cập');
+       //  return redirect()->route('user.list')->with('success', 'Bạn không được phép truy cập');
      }
 
 
