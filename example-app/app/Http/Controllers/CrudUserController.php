@@ -31,7 +31,7 @@ class CrudUserController extends Controller
        $user = User::find($input['id']);
        $user->name = $input['name'];
        $user->email = $input['email'];
-       $user->password = $input['password'];
+       $user->password = Hash::make($input['password']);
        $user->phonenumber = $input['phonenumber'];
        if ($request->hasFile('image')) {
         $image = $request->file('image');
