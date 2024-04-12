@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 
 class CrudUserController extends Controller
 {
-    //Pham Thi Thanh Tam
+    
     public function updateUser(Request $request)
     {
         $user_id = $request->get('id');
@@ -44,7 +44,7 @@ class CrudUserController extends Controller
         return redirect("list")->withSuccess('You have signed-in');
     }
 
-    //Pham Thi Bich Buoc
+   
     public function readUser(Request $request) {
         $user_id = $request->get('id');
         $users = User::find($user_id);
@@ -60,20 +60,19 @@ class CrudUserController extends Controller
 
 
 
-    //Nguyen Huu Kien
+ 
     public function listUser()
      {
-        // if (Auth::check()) {
+         if (Auth::check()) {
              $users = User::all();
              return view('crud_user.list', ['users' => $users]);
-        // }
+        }
        
-       //  return redirect()->route('user.list')->with('success', 'Bạn không được phép truy cập');
+        return redirect()->route('user.list')->with('success', 'Bạn không được phép truy cập');
      }
 
 
 
-     //Tran Huu Nam
      public function login()
      {
          return view('crud_user.login');
@@ -101,7 +100,6 @@ class CrudUserController extends Controller
     }
 
 
-     //Pham Thanh Liem
     public function createUser()
     {
         return view('crud_user.create');
