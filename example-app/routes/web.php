@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Controllers;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CrudUserController;
 
@@ -37,3 +38,10 @@ Route::get('delete', [CrudUserController::class, 'deleteUser'])->name('user.dele
 
 Route::get('update', [CrudUserController::class, 'updateUser'])->name('user.updateUser');
 Route::post('update', [CrudUserController::class, 'postUpdateUser'])->name('user.postUpdateUser');
+
+
+// home
+Route::get('home', [CrudUserController::class, 'home'])->name('home');
+
+// nav
+Route::get('nav', [Controllers::class, 'nav'])->name('nav');
