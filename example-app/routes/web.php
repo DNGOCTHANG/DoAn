@@ -45,3 +45,4 @@ Route::get('home', [CrudUserController::class, 'home'])->name('home');
 
 // nav
 Route::get('nav', [Controllers::class, 'nav'])->name('nav');
+
