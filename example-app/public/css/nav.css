@@ -183,6 +183,7 @@ h5.modal-title {
     position: absolute;
     right: 0;
     margin-right: 15px;
+    text-decoration: none;
 }
 #cart:nth-child(2){
     position: absolute;

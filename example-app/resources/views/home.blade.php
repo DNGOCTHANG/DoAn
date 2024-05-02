@@ -64,7 +64,7 @@
     <main>
 
         <body>
-            <div class="book">
+            {{-- <div class="book">
                 <img src="{{ asset('images/1712835587_✰Zenitsu Agatsuma.jpg') }}" alt="Book 1">
                 <h2>Book 1</h2>
 
@@ -75,12 +75,24 @@
                 <button id="Home-cart">
                     <i class="fa fa-heart" aria-hidden="true"></i>
                 </button>
-            </div>
+                <form action="#" method="POST">
+                    @csrf
+                    <button type="submit" id="Home-cart">
+                        <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                    </button>
+                </form>
+                <form action="#" method="POST">
+                    @csrf
+                    <button type="submit" id="Home-cart">
+                        <i class="fa fa-heart" aria-hidden="true"></i>
+                    </button>
+                </form>
+            </div> --}}
+            @foreach ($products  as $product )
             <div class="book">
-                <img src="{{ asset('images/1712835587_✰Zenitsu Agatsuma.jpg') }}" alt="Book 1">
-                <h2>Book 2</h2>
-
-                <p>$87</p>
+                <img src="{{ asset('images/'. $product ->image) }}" alt="{{ $product ->product_name }}">
+                <h2>{{ $product ->product_name }}</h2>
+                <p>{{ $product ->price }}</p>
                 <button id="Home-cart">
                     <i class="fa fa-shopping-basket" aria-hidden="true"></i>
                 </button>
@@ -88,18 +100,8 @@
                     <i class="fa fa-heart" aria-hidden="true"></i>
                 </button>
             </div>
-            <div class="book">
-                <img src="{{ asset('images/1712835587_✰Zenitsu Agatsuma.jpg') }}" alt="Book 1">
-                <h2>Book 2</h2>
-
-                <p>$87</p>
-                <button id="Home-cart">
-                    <i class="fa fa-shopping-basket" aria-hidden="true"></i>
-                </button>
-                <button id="Home-cart">
-                    <i class="fa fa-heart" aria-hidden="true"></i>
-                </button>
-            </div>
+            @endforeach
+           
             
            
 

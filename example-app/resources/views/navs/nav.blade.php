@@ -20,23 +20,23 @@
                 <img class="icon-img" src="{{ asset('icon/clipart2204641.png') }}" alt="#" />
             </div>
             <div class="content-nav">
-                <form>
+                <form action="">
                     <input type="text" name="search" placeholder="Tìm kiếm sản phẩm..." />
                     <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
                 </form>
 
-                <button id="cart">
+                <a id="cart" href="{{ route('shopping-Cart') }}" >
                     <i class="fa fa-shopping-basket" aria-hidden="true"></i>
                     Giỏ Hàng
-                </button>
-                <button id="cart">
+                </a>
+                <a id="cart" href="#">
                     <i class="fa fa fa-heart" aria-hidden="true"></i>
                     Yêu thích
-                </button>
-                <button id="cart">
+                </a>
+                <a id="cart" href="#">
                     <i class="fa fa-user" aria-hidden="true"></i>
                     tài khoản
-                </button>
+                </a>
                 
 
                 </div>
@@ -49,7 +49,7 @@
                 <div class="content-nav">
 
                     <ul>
-                        <li><a href="{{ route('home') }}">Trang Chủ</a></li><s></s>
+                        <li><a href="{{ route('listHome') }}">Trang Chủ</a></li><s></s>
                         <div class="dropdown">
                             <li><a href="#">thể loại</a></li>
                             <div class="dropdown-content">

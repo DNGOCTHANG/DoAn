@@ -41,8 +41,11 @@ Route::post('update', [CrudUserController::class, 'postUpdateUser'])->name('user
 
 
 // home
-Route::get('home', [CrudUserController::class, 'home'])->name('home');
-
+//Route::get('homes', [Controllers::class, 'home'])->name('homes');
+Route::get('home', [Controllers::class, 'listProducts'])->name('listHome');
 // nav
 Route::get('nav', [Controllers::class, 'nav'])->name('nav');
 
+
+//cart
+Route::get('shoppingCart', [Controllers::class, 'cart'])->name('shopping-Cart');
