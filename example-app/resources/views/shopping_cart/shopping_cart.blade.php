@@ -31,6 +31,10 @@
                 padding: 0.5rem;
                 text-align: left;
                 border-bottom: 1px solid #ccc;
+                
+            }
+            a{
+                text-decoration: none
             }
 
             th:first-child,
@@ -59,6 +63,7 @@
                 background-color: #45a049;
             }
         </style>
+
     </head>
     <main>
 
@@ -69,28 +74,46 @@
                     <table>
                         <thead>
                             <tr>
-                                <th></th>
-                                <th>Chọn tất cả</th>
+                                <th>chọn tất cả</th>
                                 <th>Tên sản phẩm</th>
                                 <th>Đơn giá</th>
                                 <th>Số lượng</th>
                                 <th>Số tiền</th>
+                                <th></th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td><input type="checkbox"></td>
-                                <td>The legend of sleepy</td>
-                                <td>$87</td>
-                                <td>1</td>
-                                <td>$87</td>
-                            </tr>
+                        <tbody id="cartBody">
+                          
+                                @if (isset($cart) && count($cart) > 0)
+                                    @foreach ($cart as $item)
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td>{{ $item['product_name']}}</td>
+                                        <td>{{ $item['price'] }}</td>
+                                        <td>{{ $item['quantity'] }}</td>
+                                        <td>{{ $item['price'] * $item['quantity'] }}</td>
+                                        <td>
+                                            <a href="#" class="btn btn-sm btn-danger">Delete</a>
+                                        </td>
+                                    </tr>
+                                    @endforeach
+                                @else
+                                    <tr>
+                                        <td colspan="6">Giỏ hàng trống</td>
+                                    </tr>
+                                @endif
+                           
                         </tbody>
                         <tfoot>
+                            @php
+                                $totalPayment = 0;
+                                foreach ($cart as $item) {
+                                    $totalPayment += $item['price'] * $item['quantity'];
+                                }
+                            @endphp
                             <tr>
-                                <td colspan="4">Tổng thanh toán (1 sản phẩm):</td>
-                                <td>$87</td>
+                                <td colspan="5">Tổng thanh toán ({{ count($cart) }} sản phẩm):</td>
+                                <td>${{ $totalPayment }}</td>
                             </tr>
                         </tfoot>
                     </table>

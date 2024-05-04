@@ -7,13 +7,13 @@
             body {
                 font-family: Arial, sans-serif;
             }
-            
+
             main {
                 display: flex;
                 flex-wrap: wrap;
                 justify-content: space-between;
                 padding: 20px;
-                
+
             }
 
             .book {
@@ -57,7 +57,10 @@
                 margin-left: 1rem;
                 padding: 12px;
                 cursor: pointer;
-
+               
+            }
+            form{
+                display: inline;
             }
         </style>
     </head>
@@ -88,22 +91,28 @@
                     </button>
                 </form>
             </div> --}}
-            @foreach ($products  as $product )
-            <div class="book">
-                <img src="{{ asset('images/'. $product ->image) }}" alt="{{ $product ->product_name }}">
-                <h2>{{ $product ->product_name }}</h2>
-                <p>{{ $product ->price }}</p>
-                <button id="Home-cart">
-                    <i class="fa fa-shopping-basket" aria-hidden="true"></i>
-                </button>
-                <button id="Home-cart">
-                    <i class="fa fa-heart" aria-hidden="true"></i>
-                </button>
-            </div>
+            @foreach ($products as $product)
+                <div class="book">
+                    <img src="{{ asset('images/' . $product->image) }}" alt="{{ $product->product_name }}">
+                    <h2><a href=""></a>{{ $product->product_name }}</h2>
+                    <p>{{ $product->price }}</p>
+                    <form action="{{ route('addToCart', ['id' => $product->product_id]) }}" method="GET">
+                        <button id="Home-cart">
+                            <input type="hidden" name="product_id" value="{{ $product->id }}">
+                            <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                        </button>
+                    </form>
+                    <form action="#">
+                        <button id="Home-cart">
+                            <i class="fa fa-heart" aria-hidden="true"></i>
+                        </button>
+                    </form>
+
+                </div>
             @endforeach
-           
-            
-           
+
+
+
 
 
     </main>

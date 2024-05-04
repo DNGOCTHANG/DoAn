@@ -25,7 +25,7 @@
                     <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
                 </form>
 
-                <a id="cart" href="{{ route('shopping-Cart') }}" >
+                <a id="cart" href="{{ route('cart')}}">
                     <i class="fa fa-shopping-basket" aria-hidden="true"></i>
                     Giỏ Hàng
                 </a>

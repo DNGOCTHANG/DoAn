@@ -48,4 +48,8 @@ Route::get('nav', [Controllers::class, 'nav'])->name('nav');
 
 
 //cart
-Route::get('shoppingCart', [Controllers::class, 'cart'])->name('shopping-Cart');
+Route::get('shoppingCart/{id}', [Controllers::class, 'addToCart'])->name('addToCart');
+
+
+Route::get('cart', [Controllers::class, 'showCart'])->name('cart');
+//Route::get('show-cart', [Controllers::class, 'showCart'])->name('showCart');
