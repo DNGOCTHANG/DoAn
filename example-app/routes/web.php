@@ -49,7 +49,7 @@ Route::get('nav', [Controllers::class, 'nav'])->name('nav');
 
 //cart
 Route::get('shoppingCart/{id}', [Controllers::class, 'addToCart'])->name('addToCart');
-
+Route::get('delete-cart/{id}', [Controllers::class, 'deleteCart'])->name('deleteCart');
 
 Route::get('cart', [Controllers::class, 'showCart'])->name('cart');
-//Route::get('show-cart', [Controllers::class, 'showCart'])->name('showCart');
+Route::get('Detail-cart', [Controllers::class, 'Detail'])->name('Detail');

@@ -11,26 +11,27 @@
             main {
                 display: flex;
                 flex-wrap: wrap;
-                justify-content: space-between;
                 padding: 20px;
-
+                justify-content: space-around;
             }
 
             .book {
-                width: 30%;
+                width: 300px;
                 margin-bottom: 20px;
                 box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
                 border-radius: 5px;
                 overflow: hidden;
 
+
             }
 
             .book img {
-                width: 100%;
-                height: auto;
+                width: 300px;
+                height: 350px;
+
             }
 
-            .book h2 {
+            .book h5 {
                 padding: 10px;
                 background-color: #ffffff00;
                 color: #000000;
@@ -44,7 +45,6 @@
                 color: #333;
                 margin: 0;
                 font-weight: bold;
-
             }
 
             #Home-cart {
@@ -57,45 +57,49 @@
                 margin-left: 1rem;
                 padding: 12px;
                 cursor: pointer;
-               
             }
-            form{
+
+            /* #Home-cart {
+                font-size: 15px;
+                color: #fff;
+                background: #c7b30000;
+                border: 1px solid transparent;
+                border-radius: 10px;
+                outline: none;
+                margin-left: 1rem;
+                padding: 12px;
+                cursor: pointer;
+                position: absolute;
+                right: 0;
+                margin-right: 15px;
+                text-decoration: none;
+            }
+*/
+           
+
+            #Home-cart:hover {
+                border-color: #fff;
+            } 
+
+            form {
                 display: inline;
+            }
+
+            a {
+                text-decoration: none;
             }
         </style>
     </head>
-    <main>
 
-        <body>
-            {{-- <div class="book">
-                <img src="{{ asset('images/1712835587_✰Zenitsu Agatsuma.jpg') }}" alt="Book 1">
-                <h2>Book 1</h2>
-
-                <p>$87</p>
-                <button id="Home-cart">
-                    <i class="fa fa-shopping-basket" aria-hidden="true"></i>
-                </button>
-                <button id="Home-cart">
-                    <i class="fa fa-heart" aria-hidden="true"></i>
-                </button>
-                <form action="#" method="POST">
-                    @csrf
-                    <button type="submit" id="Home-cart">
-                        <i class="fa fa-shopping-basket" aria-hidden="true"></i>
-                    </button>
-                </form>
-                <form action="#" method="POST">
-                    @csrf
-                    <button type="submit" id="Home-cart">
-                        <i class="fa fa-heart" aria-hidden="true"></i>
-                    </button>
-                </form>
-            </div> --}}
+    <body>
+        <main>
             @foreach ($products as $product)
                 <div class="book">
                     <img src="{{ asset('images/' . $product->image) }}" alt="{{ $product->product_name }}">
-                    <h2><a href=""></a>{{ $product->product_name }}</h2>
-                    <p>{{ $product->price }}</p>
+                    <a href="{{ route('Detail', ['id' => $product->product_id]) }}">
+                        <h5>{{ $product->product_name }}</h5>
+                    </a>
+                    <p>{{ $product->price }} VND</p>
                     <form action="{{ route('addToCart', ['id' => $product->product_id]) }}" method="GET">
                         <button id="Home-cart">
                             <input type="hidden" name="product_id" value="{{ $product->id }}">
@@ -107,14 +111,8 @@
                             <i class="fa fa-heart" aria-hidden="true"></i>
                         </button>
                     </form>
-
                 </div>
             @endforeach
-
-
-
-
-
-    </main>
+        </main>
     </body>
 @endsection

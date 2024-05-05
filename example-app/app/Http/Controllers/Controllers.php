@@ -124,5 +124,58 @@ class Controllers extends Controller
         return view('shopping_cart.shopping_cart', ['cart' => $cart]);
     }
     
+    public function Detail(Request $request)
+    {
+        $id = $request->get('id');
+        $product = Product::find($id);
+        return view('detailProduct', ['product' => $product]);
+    }
+
+
+    // xáo giỏ hàng
    
+    // public function deleteCart(Request $request) {
+    //     $product_id = $request->get('product_id');
+        
+    //     // Kiểm tra xem sản phẩm tồn tại trong giỏ hàng không
+    //     $cart_item = shoppingcart::find($product_id);
+        
+    //     if (!$cart_item) {
+    //         return redirect('shopping_cart')->withError('Sản phẩm không tồn tại trong giỏ hàng');
+    //     }
+    
+    //     $cart_item->delete();
+    
+    //     return redirect('shopping_cart')->withSuccess('Bạn đã xóa sản phẩm khỏi giỏ hàng');
+    // }
+    public function deleteCart(Request $request, $id) {
+        if (Auth::check()) {
+            // Người dùng đã đăng nhập, xóa sản phẩm khỏi cơ sở dữ liệu
+            $user = Auth::user();
+            $cartItem = shoppingcart::where('user_id', $user->id)->where('product_id', $id)->first();
+
+            
+
+            if ($cartItem) {
+                $cartItem->delete();
+                return redirect()->back()->withSuccess('Bạn đã xóa sản phẩm khỏi giỏ hàng');
+            } else {
+                return redirect()->back()->with('error', 'Product not found in cart.');
+            }
+         } //else {
+        //     // Người dùng chưa đăng nhập, xóa sản phẩm khỏi cookie
+        //     if (Cookie::get('cart')) {
+        //         $cart = json_decode(Cookie::get('cart'), true);
+        //         if (isset($cart[$id])) {
+        //             unset($cart[$id]);
+        //             $cookie = Cookie::make('cart', json_encode($cart), 60);
+        //             return response('Product removed from cart.')->withCookie($cookie);
+        //         } else {
+        //             return response('Product not found in cart.');
+        //         }
+        //     } else {
+        //         return response('No products in cart.');
+        //     }
+        // }
+    }
 }

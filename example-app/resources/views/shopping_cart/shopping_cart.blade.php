@@ -75,6 +75,7 @@
                         <thead>
                             <tr>
                                 <th>chọn tất cả</th>
+                               
                                 <th>Tên sản phẩm</th>
                                 <th>Đơn giá</th>
                                 <th>Số lượng</th>
@@ -88,12 +89,13 @@
                                     @foreach ($cart as $item)
                                     <tr>
                                         <td><input type="checkbox"></td>
+                                        
                                         <td>{{ $item['product_name']}}</td>
                                         <td>{{ $item['price'] }}</td>
                                         <td>{{ $item['quantity'] }}</td>
                                         <td>{{ $item['price'] * $item['quantity'] }}</td>
                                         <td>
-                                            <a href="#" class="btn btn-sm btn-danger">Delete</a>
+                                            <a href="{{ route('deleteCart', ['id' => $item['product_id']]) }}" class="btn btn-sm btn-danger" method="GET">Delete</a>
                                         </td>
                                     </tr>
                                     @endforeach
