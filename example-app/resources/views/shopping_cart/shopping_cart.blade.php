@@ -3,67 +3,7 @@
 @section('content')
 
     <head>
-        <style>
-            body {
-                font-family: Arial, sans-serif;
-                margin: 0;
-                padding: 0;
-            }
-
-            .container {
-                max-width: 1200px;
-                margin: 0 auto;
-                padding: 2rem;
-            }
-
-            h1 {
-                text-align: center;
-                margin-bottom: 1rem;
-            }
-
-            table {
-                width: 100%;
-                border-collapse: collapse;
-            }
-
-            th,
-            td {
-                padding: 0.5rem;
-                text-align: left;
-                border-bottom: 1px solid #ccc;
-                
-            }
-            a{
-                text-decoration: none
-            }
-
-            th:first-child,
-            td:first-child {
-                padding-left: 0;
-            }
-
-            th:last-child,
-            td:last-child {
-                padding-right: 0;
-            }
-
-            button {
-                display: block;
-                width: 100%;
-                padding: 0.5rem;
-                background-color: #4CAF50;
-                color: white;
-                border: none;
-                border-radius: 0.25rem;
-                cursor: pointer;
-                font-size: 1rem;
-            }
-
-            button:hover {
-                background-color: #45a049;
-            }
-        </style>
-
+        <link href="{{ asset('css/cart.css') }}" rel="stylesheet">
     </head>
     <main>
 
@@ -94,8 +34,8 @@
                                         <td>{{ $item['price'] }}</td>
                                         <td>{{ $item['quantity'] }}</td>
                                         <td>{{ $item['price'] * $item['quantity'] }}</td>
-                                        <td>
-                                            <a href="{{ route('deleteCart', ['id' => $item['product_id']]) }}" class="btn btn-sm btn-danger" method="GET">Delete</a>
+                                        <td id="deleteForm">
+                                            <a onclick="confirmDelete()" href="{{ route('deleteCart', ['id' => $item['product_id']]) }}" class="btn btn-sm btn-danger" method="GET">Delete</a>
                                         </td>
                                     </tr>
                                     @endforeach
@@ -124,4 +64,12 @@
             </div>
         </body>
     </main>
+    <script>
+        function confirmDelete() {
+            if (confirm("bạn có muốn xóa sản phẩm không?")) {
+                // Nếu người dùng chấp nhận xóa, gửi yêu cầu xóa sản phẩm
+                document.getElementById("deleteForm").submit();
+            }
+        }
+    </script>
 @endsection

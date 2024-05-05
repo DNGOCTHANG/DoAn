@@ -20,7 +20,7 @@ class HomeSeeder extends Seeder
             'description' => 'Tự truyện của Nemo kể về cuộc hành trình của nemo ...',
             'price' => 100000,
             'category' => 'Phiêu Lưu',
-            'image' => '1712835587_✰Zenitsu Agatsuma.jpg',
+            'image' => 'sach1.jpg',
         ]);
         DB::table('products')->insert([
             'product_id' => 2,
@@ -28,7 +28,7 @@ class HomeSeeder extends Seeder
             'description' => 'Tự truyện của Nemo kể về cuộc hành trình của nemo ...',
             'price' => 100000,
             'category' => 'Phiêu Lưu',
-            'image' => '1712835587_✰Zenitsu Agatsuma.jpg',
+            'image' => 'sach2.jpg',
         ]);
         DB::table('products')->insert([
             'product_id' => 3,
@@ -36,7 +36,7 @@ class HomeSeeder extends Seeder
             'description' => 'Tự truyện của Nemo kể về cuộc hành trình của nemo ...',
             'price' => 100000,
             'category' => 'Lãng mạng',
-            'image' => '1712835587_✰Zenitsu Agatsuma.jpg',
+            'image' => 'sach1.jpg',
         ]);
         DB::table('products')->insert([
             'product_id' => 4,
@@ -44,7 +44,7 @@ class HomeSeeder extends Seeder
             'description' => 'Tự truyện của Nemo kể về cuộc hành trình của nemo ...',
             'price' => 100000,
             'category' => 'trinh thám',
-            'image' => '1712835587_✰Zenitsu Agatsuma.jpg',
+            'image' => 'sach1.jpg',
         ]);
         DB::table('products')->insert([
             'product_id' => 5,
@@ -52,7 +52,7 @@ class HomeSeeder extends Seeder
             'description' => 'Tự truyện của Nemo kể về cuộc hành trình của nemo ...',
             'price' => 100000,
             'category' => 'viễn tưởng',
-            'image' => '1712835587_✰Zenitsu Agatsuma.jpg',
+            'image' => 'sach1.jpg',
         ]);
         DB::table('products')->insert([
             'product_id' => 6,
@@ -60,7 +60,23 @@ class HomeSeeder extends Seeder
             'description' => 'Tự truyện của Nemo kể về cuộc hành trình của nemo ...',
             'price' => 100000,
             'category' => 'khoa học',
-            'image' => '1712835587_✰Zenitsu Agatsuma.jpg',
+            'image' => 'sach1.jpg',
+        ]);
+        DB::table('products')->insert([
+            'product_id' => 7,
+            'product_name' => 'Bí ẩn về vũ trụ',
+            'description' => 'Tự truyện của Nemo kể về cuộc hành trình của nemo ...',
+            'price' => 100000,
+            'category' => 'khoa học',
+            'image' => 'sach1.jpg',
+        ]);
+        DB::table('products')->insert([
+            'product_id' => 8,
+            'product_name' => 'Bí ẩn về vũ trụ',
+            'description' => 'Tự truyện của Nemo kể về cuộc hành trình của nemo ...',
+            'price' => 100000,
+            'category' => 'khoa học',
+            'image' => 'sach1.jpg',
         ]);
 
     }

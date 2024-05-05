@@ -3,6 +3,7 @@
 use App\Http\Controllers\Controllers;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CrudUserController;
+use App\Http\Controllers\favorite;
 
 /*
 |--------------------------------------------------------------------------
@@ -53,3 +54,8 @@ Route::get('delete-cart/{id}', [Controllers::class, 'deleteCart'])->name('delete
 
 Route::get('cart', [Controllers::class, 'showCart'])->name('cart');
 Route::get('Detail-cart', [Controllers::class, 'Detail'])->name('Detail');
+
+
+Route::get('favoritecart/{id}', [favorite::class, 'addfavorite'])->name('addfavorite');
+Route::get('cartfovorite', [favorite::class, 'showFavorites'])->name('cartfovorite');
+Route::get('delete-cartfovorite/{id}', [favorite::class, 'deleteFavorite'])->name('deleteFavorite');

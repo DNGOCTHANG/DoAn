@@ -106,7 +106,7 @@
                             <i class="fa fa-shopping-basket" aria-hidden="true"></i>
                         </button>
                     </form>
-                    <form action="#">
+                    <form action="{{ route('addfavorite', ['id' => $product->product_id]) }}">
                         <button id="Home-cart">
                             <i class="fa fa-heart" aria-hidden="true"></i>
                         </button>

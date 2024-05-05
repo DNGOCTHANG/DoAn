@@ -21,7 +21,7 @@
                 <img class="icon-img" src="{{ asset('icon/clipart2204641.png') }}" alt="#" />
             </div>
             <div class="content-nav">
-                <form action="">
+                <form action="#">
                     <input type="text" name="search" placeholder="Tìm kiếm sản phẩm..." />
                     <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
                 </form>
@@ -30,7 +30,7 @@
                     <i class="fa fa-shopping-basket" aria-hidden="true"></i>
                     Giỏ Hàng
                 </a>
-                <a id="cart" href="#">
+                <a id="cart" href="{{ route('cartfovorite')}}">
                     <i class="fa fa fa-heart" aria-hidden="true"></i>
                     Yêu thích
                 </a>
@@ -90,9 +90,9 @@
 
     @yield('content')
 
-    <footer>
-        <p>Copyright © Books World</p>
-    </footer>
+    
 </body>
-
+<footer>
+    <p>Copyright © Books World</p>
+</footer>
 </html>

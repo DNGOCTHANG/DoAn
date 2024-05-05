@@ -243,9 +243,6 @@ footer {
 
 }
 
-/* Bố cục linh hoạt: các cột xếp chồng lên nhau thay vì cạnh nhau khi màn hình có chiều rộng dưới 700px */
-@media screen and (max-width: 700px) {  .leftcolumn, .rightcolumn {     width: 100%;    padding: 0;  }}
-/* Bố cục linh hoạt: Thanh menu điều hướng xếp chồng lên nhau thay vì cạnh nhaukhi màn hình có chiều rộng dưới 300px  */
 
 /* dropdown */
 .dropbtn {
