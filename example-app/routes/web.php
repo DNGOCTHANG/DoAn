@@ -43,7 +43,7 @@ Route::post('update', [CrudUserController::class, 'postUpdateUser'])->name('user
 
 // home
 //Route::get('homes', [Controllers::class, 'home'])->name('homes');
-Route::get('home', [Controllers::class, 'listProducts'])->name('listHome');
+Route::get('home', [Controllers::class, 'index'])->name('listHome');
 // nav
 Route::get('nav', [Controllers::class, 'nav'])->name('nav');
 
@@ -59,3 +59,4 @@ Route::get('Detail-cart', [Controllers::class, 'Detail'])->name('Detail');
 Route::get('favoritecart/{id}', [favorite::class, 'addfavorite'])->name('addfavorite');
 Route::get('cartfovorite', [favorite::class, 'showFavorites'])->name('cartfovorite');
 Route::get('delete-cartfovorite/{id}', [favorite::class, 'deleteFavorite'])->name('deleteFavorite');
+Route::get('phantrang', [Controllers::class, 'index'])->name('phantrang');

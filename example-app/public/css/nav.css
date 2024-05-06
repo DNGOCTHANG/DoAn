@@ -10,26 +10,27 @@ li {
 }
 
 /* header */
-nav {
+.content-nav {
     padding: 15px;
     width: 100%;
     display: flex;
-    background: #176988;
+    background: #176a88;
 }
 
-nav .content-nav {
+.nav-top .content-nav {
     display: flex;
     line-height: 2rem;
     flex-direction: row;
     justify-content: flex-end;
     width: 60%;
+    
 }
 
-nav .content-nav ul {
+ .content-nav ul {
     display: flex;
 }
 
-nav .content-nav ul li a {
+ .content-nav ul li a {
     text-decoration: none;
     color: #ffffff;
     text-transform: uppercase;
@@ -37,18 +38,30 @@ nav .content-nav ul li a {
     font-weight: 800;
 }
 
-nav .content-nav ul li a:hover {
+ .content-nav ul li a:hover {
     color: #eb4545;
 }
 
 
 /* tìm kiếm */
-.content-nav form {
-    position: relative;
-    margin-top: 10px;
+.content-nav {
+    /* padding-left: 30%; */
+    justify-content: space-evenly;
+
 }
 
-.content-nav form input {
+.content-navs {
+    padding-left: 25%;
+
+}
+.content-navs form {
+    position: relative;
+    margin-top: 10px;
+    
+
+}
+
+.content-navs form input {
     border: none;
     background: #fff;
     padding: 7px;
@@ -57,17 +70,26 @@ nav .content-nav ul li a:hover {
     width: 500px;
 }
 
-.content-nav form button {
-    padding: 5px;
+.content-navs form .btn-search {
+    width: 100px;
+    background-color: #4caf4f00;
+  
+    height: 40px;
+    padding: 0px;
     border-radius: 12px;
-    position: absolute;
+    position: relative;
     right: 0;
-    top: 2px;
+    top: 0;
+    bottom: -3px;
     border: none;
     outline: none;
-    background: #fff;
+   
+    
 }
-
+.content-navs form .btn-search:hover{
+    background-color: #5f69f2;
+    border-color: #fff;
+}
 /* modal */
 .modal {
     display: none;
@@ -170,7 +192,7 @@ h5.modal-title {
     cursor: pointer;
 }
 
-#cart {
+#carts {
     font-size: 15px;
     color: #fff;
     background: #c7b30000;
@@ -185,18 +207,18 @@ h5.modal-title {
     margin-right: 15px;
     text-decoration: none;
 }
-#cart:nth-child(2){
+#carts:nth-child(2){
     position: absolute;
     right: 0;
     margin-right: 120px;
 }
 
-#cart:nth-child(3){
+#carts:nth-child(3){
     position: absolute;
     right: 0;
     margin-right: 240px;
 }
-#cart:hover {
+#carts:hover {
     border-color: #fff;
 }
 
@@ -293,6 +315,7 @@ footer {
 }
 
 .nav-top {
+    
     padding: 15px;
     width: 100%;
     display: flex;

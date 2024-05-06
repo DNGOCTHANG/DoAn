@@ -59,7 +59,7 @@
                             </tr>
                         </tfoot>
                     </table>
-                    <button type="submit">Mua hàng</button>
+                    <button class="btn-mua" type="submit">Mua hàng</button>
                 </form>
             </div>
         </body>

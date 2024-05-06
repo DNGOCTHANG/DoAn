@@ -10,6 +10,8 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cookie;
+use Illuminate\Support\Facades\DB;
+use PhpParser\Node\Expr\New_;
 
 class Controllers extends Controller
 {
@@ -177,5 +179,13 @@ class Controllers extends Controller
         //         return response('No products in cart.');
         //     }
         // }
+
+       
     }
+    public function index(){
+       
+        $products = Product::paginate(4);
+        return view('home', ['products' => $products]);
+    }
+    
 }

@@ -28,7 +28,8 @@ td {
     
 }
 a{
-    text-decoration: none
+    text-decoration: none;
+    
 }
 
 th:first-child,
@@ -41,7 +42,7 @@ td:last-child {
     padding-right: 0;
 }
 
-button {
+.btn-mua {
     display: block;
     width: 100%;
     padding: 0.5rem;
@@ -53,6 +54,6 @@ button {
     font-size: 1rem;
 }
 
-button:hover {
-    background-color: #45a049;
+.btn-mua:hover {
+    background-color: #d68c37;
 }
