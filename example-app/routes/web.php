@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\Controllers;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CrudUserController;
+use App\Http\Controllers\favorite;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,3 +39,24 @@ Route::get('delete', [CrudUserController::class, 'deleteUser'])->name('user.dele
 
 Route::get('update', [CrudUserController::class, 'updateUser'])->name('user.updateUser');
 Route::post('update', [CrudUserController::class, 'postUpdateUser'])->name('user.postUpdateUser');
+
+
+// home
+//Route::get('homes', [Controllers::class, 'home'])->name('homes');
+Route::get('home', [Controllers::class, 'index'])->name('listHome');
+// nav
+Route::get('nav', [Controllers::class, 'nav'])->name('nav');
+
+
+//cart
+Route::get('shoppingCart/{id}', [Controllers::class, 'addToCart'])->name('addToCart');
+Route::get('delete-cart/{id}', [Controllers::class, 'deleteCart'])->name('deleteCart');
+
+Route::get('cart', [Controllers::class, 'showCart'])->name('cart');
+Route::get('Detail-cart', [Controllers::class, 'Detail'])->name('Detail');
+
+
+Route::get('favoritecart/{id}', [favorite::class, 'addfavorite'])->name('addfavorite');
+Route::get('cartfovorite', [favorite::class, 'showFavorites'])->name('cartfovorite');
+Route::get('delete-cartfovorite/{id}', [favorite::class, 'deleteFavorite'])->name('deleteFavorite');
+Route::get('phantrang', [Controllers::class, 'index'])->name('phantrang');

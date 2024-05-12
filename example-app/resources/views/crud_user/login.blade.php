@@ -30,6 +30,9 @@
                                         </label>
                                     </div>
                                 </div>
+                                <div class="form-group mb-3 text-right">
+                                    <a href="{{ route('forgot.password') }}">Quên mật khẩu?</a>
+                                </div>
                                 <div class="d-grid mx-auto">
                                     <button type="submit" class="btn btn-dark btn-block">Đăng nhập</button>
                                 </div>
