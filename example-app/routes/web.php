@@ -60,3 +60,9 @@ Route::get('favoritecart/{id}', [favorite::class, 'addfavorite'])->name('addfavo
 Route::get('cartfovorite', [favorite::class, 'showFavorites'])->name('cartfovorite');
 Route::get('delete-cartfovorite/{id}', [favorite::class, 'deleteFavorite'])->name('deleteFavorite');
 Route::get('phantrang', [Controllers::class, 'index'])->name('phantrang');
+
+Route::get('forgot-password', [CrudUserController::class, 'showUpdatePasswordForm'])->name('crud_user.forgot_password');
+Route::post('forgot-password', [CrudUserController::class, 'forgotPassword'])->name('forgot.password');
+
+
+Route::post('submit-review', [ReviewController::class, 'submitReview'])->name('submitReview');

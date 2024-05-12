@@ -23,7 +23,8 @@
             <div class="content-navs">
                 <form action="#">
                     <input type="text" name="search" placeholder="Tìm kiếm sản phẩm..." />
-                    <button class="btn-search"  type="submit"><i class="fa fa-search" aria-hidden="true" style="color: white"> Tìm kiếm</i></button>
+                    <button class="btn-search" type="submit"><i class="fa fa-search" aria-hidden="true"
+                            style="color: white"> Tìm kiếm</i></button>
                 </form>
             </div>
             <div class="btn-go">
@@ -35,10 +36,10 @@
                     <i class="fa fa fa-heart" aria-hidden="true"></i>
                     Yêu thích
                 </a>
-                <a id="carts" href="#">
+                <a id="carts" href="{{ route('user.list') }}">
                     <i class="fa fa-user" aria-hidden="true"></i>
                     tài khoản
-                </a>
+                    </>
             </div>
 
 
@@ -48,8 +49,8 @@
         </div>
 
         {{-- <div class="img-nav">
-                <img class="icon-img" src="{{ asset('icon/clipart2204641.png') }}" alt="#" />
-            </div> --}}
+            <img class="icon-img" src="{{ asset('icon/clipart2204641.png') }}" alt="#" />
+        </div> --}}
         <div class="content-nav">
 
             <ul>
@@ -68,9 +69,9 @@
 
             </ul>
             {{-- <form>
-                    <input type="text" name="search" placeholder="Tìm kiếm sản phẩm..." />
-                    <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
-                </form> --}}
+                <input type="text" name="search" placeholder="Tìm kiếm sản phẩm..." />
+                <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+            </form> --}}
 
 
             <!-- The Modal -->
