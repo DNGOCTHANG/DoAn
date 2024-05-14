@@ -72,3 +72,9 @@ Route::get('delete-product', [CrudProductController::class, 'deleteProduct'])->n
 
 Route::get('/products/{id}/edit', [CrudProductController::class,'editProduct'])->name('product.edit');
 Route::put('/products/{id}', [CrudProductController::class,'updateProduct'])->name('product.update');
+
+Route::get('forgot-password', [CrudUserController::class, 'showUpdatePasswordForm'])->name('crud_user.forgot_password');
+Route::post('forgot-password', [CrudUserController::class, 'forgotPassword'])->name('forgot.password');
+
+Route::post('submit-review', [ReviewController::class, 'submitReview'])->name('submitReview');
+
