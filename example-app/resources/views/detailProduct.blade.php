@@ -18,18 +18,11 @@
 
 
 
-            .book {
 
-                width: 30%;
-                margin-bottom: 20px;
-                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-                border-radius: 5px;
-                overflow: hidden;
 
-            }
 
-            .book img {
-                width: 100%;
+            .books img {
+                width: 400px;
                 height: auto;
             }
 
@@ -79,10 +72,11 @@
 
             }
 
-            .login-form {
+            h1 {
                 display: flex;
                 justify-content: center;
                 align-items: center;
+
             }
 
             button {
@@ -111,45 +105,76 @@
             button:active {
                 transform: translateY(-1px);
             }
+
+            .conten {
+                display: inline;
+            }
         </style>
     </head>
-    <main>
 
-        <body>
-            <main class="login-form">
-                <h1>thông tin chi tiết</h1>
-                <div class="container">
 
-                    <div style="position: absolute;">
-                        <img src="{{ asset('images/' . $product->image) }}" alt="{{ $product->product_name }}"
-                            style="width: 300px; height: 300px; margin-right: 20px; border: 5px rgb(0, 249, 54) double">
-                        <div style="float: right;">
-                            <h3> {{ $product->product_name }}</h3>
-                            <p>description: {{ $product->description }}</p>
-                            <p>price: {{ $product->price }}</p>
-                            <p>category: {{ $product->category }}</p>
-                            <form action="{{ route('addToCart', ['id' => $product->product_id]) }}" method="GET">
-                                <button id="Home-cart">
-                                    <input type="hidden" name="product_id" value="{{ $product->id }}">
-                                    <i class="fa fa-shopping-basket" aria-hidden="true"></i>
-                                </button>
-                            </form>
-                            <form action="#">
-                                <button id="Home-cart">
-                                    <i class="fa fa-heart" aria-hidden="true"></i>
-                                </button>
-                            </form>
-                            <button class="btn-buy">Mua Ngay</button>
-                        </div>
+    <body>
+        <main class="conten">
+           
+            <div class="container">
+
+                <div class="books row" style="position: relative;">
+                    @csrf
+                    <div class="img-book col-md-4">
+
+                        <img src="{{ asset('images/' . $product->image) }}" alt="{{ $product->product_name }}">
+
+                    </div>
+                    <div class="book-detail-body col-md-8">
+                        <h3> {{ $product->product_name }}</h3>
+                        <p>Giá: {{ $product->price }}</p>
+                        <p>Thể loại: {{ $product->category }}</p>
+                        <p>Tác giả: </p>
+                        <p>Năm xuất bản: </p>
+                        <p>Mô tả: {{ $product->description }}</p>
+                        <form action="{{ route('addToCart', ['id' => $product->product_id]) }}" method="GET">
+                            <button id="Home-cart">
+                                <input type="hidden" name="product_id" value="{{ $product->id }}">
+                                <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                            </button>
+                        </form>
+                        <form action="{{ route('addfavorite', ['id' => $product->product_id]) }}">
+                            <button id="Home-cart">
+                                <i class="fa fa-heart" aria-hidden="true"></i>
+                            </button>
+                        </form>
+                        <button class="btn-buy">Mua Ngay</button>
 
                     </div>
 
 
-
+                </div>
+                <div class=" border border-primary p-2" style="margin: 50px">
+                    <p>bình luận</p>
+                    <div class="bodet-commen" style=>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, quia inventore. Doloremque
+                            corrupti vero accusantium asperiores itaque perferendis odit similique, tempore autem, accusamus
+                            nesciunt est rerum explicabo, ea eveniet illo.</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, quia inventore. Doloremque
+                            corrupti vero accusantium asperiores itaque perferendis odit similique, tempore autem, accusamus
+                            nesciunt est rerum explicabo, ea eveniet illo.</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, quia inventore. Doloremque
+                            corrupti vero accusantium asperiores itaque perferendis odit similique, tempore autem, accusamus
+                            nesciunt est rerum explicabo, ea eveniet illo.</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, quia inventore. Doloremque
+                            corrupti vero accusantium asperiores itaque perferendis odit similique, tempore autem, accusamus
+                            nesciunt est rerum explicabo, ea eveniet illo.</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, quia inventore. Doloremque
+                            corrupti vero accusantium asperiores itaque perferendis odit similique, tempore autem, accusamus
+                            nesciunt est rerum explicabo, ea eveniet illo.</p>
+                    </div>
                 </div>
 
-            </main>
-        </body>
-    </main>
-    
+            </div>
+
+
+        </main>
+
+
+    </body>
 @endsection

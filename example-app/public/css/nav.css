@@ -15,7 +15,14 @@ li {
     width: 100%;
     display: flex;
     background: #176a88;
+    
 }
+
+/* .nav-top{
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+} */
 
 .nav-top .content-nav {
     display: flex;
