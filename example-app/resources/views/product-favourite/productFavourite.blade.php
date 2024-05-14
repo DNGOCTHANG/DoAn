@@ -8,6 +8,7 @@
 
         </style>
     </head>
+
     <main>
 
         <body>
@@ -23,10 +24,10 @@
                                     <td><img src="{{ asset('images/' . $item['image']) }}" alt="" style="width:50px ;">
                                     </td>
                                     <td>
-                                    <a href="{{ route('Detail', ['id' => $item['product_id']]) }}">
-                                        {{ $item['product_name'] }}
-                                    </a>
-                                </td>
+                                        <a href="{{ route('Detail', ['id' => $item['product_id']]) }}">
+                                            {{ $item['product_name'] }}
+                                        </a>
+                                    </td>
                                     <td>{{ $item['price'] }}</td>
                                     <td><a href="">Chat</a></td>
                                     <td id="deleteForm">
