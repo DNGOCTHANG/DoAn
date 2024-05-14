@@ -9,6 +9,8 @@ use Illuminate\Http\Request;
 
 class CrudUserController extends Controller
 {
+
+   
     
     public function updateUser(Request $request)
     {
@@ -88,7 +90,10 @@ class CrudUserController extends Controller
          $credentials = $request->only('email', 'password');
  
           if (Auth::attempt($credentials)) {
-             return redirect()->intended('list')
+            if ($credentials['email'] == "admin@gmail.com" ) {
+                return redirect()->intended('list')->withSuccess('Signed in');
+            }
+             return redirect()->intended('home')
                  ->withSuccess('Signed in');
         }
          return redirect("login")->withSuccess('Login details are not valid');
@@ -108,6 +113,9 @@ class CrudUserController extends Controller
     {
         return view('dashboard');
     }
+
+    
+
     public function postUser(Request $request)
     {
         $request->validate([
