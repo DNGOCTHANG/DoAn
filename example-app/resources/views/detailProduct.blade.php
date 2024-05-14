@@ -129,8 +129,8 @@
                         <h3> {{ $product->product_name }}</h3>
                         <p>Giá: {{ $product->price }}</p>
                         <p>Thể loại: {{ $product->category }}</p>
-                        <p>Tác giả: </p>
-                        <p>Năm xuất bản: </p>
+                        <p>Tác giả: {{ $product->author }}</p>
+                        <p>Năm xuất bản: {{ $product->publish }}</p>
                         <p>Mô tả: {{ $product->description }}</p>
                         <form action="{{ route('addToCart', ['id' => $product->product_id]) }}" method="GET">
                             <button id="Home-cart">

@@ -9,14 +9,14 @@
                         <h3 class="card-header text-center">cập nhập</h3>
                         <div class="card-body">
 
-                            <form action="{{ route('product.update', $product->id) }}" method="POST"
+                            <form action="{{ route('product.update', $product->product_id) }}" method="POST"
                                 enctype="multipart/form-data" class="row">
                                 <div class="col-md-7">
                                     @method('PUT')
                                     @csrf
                                     <div class="form-group mb-3">
                                         <label for="masach">mã sách</label><br><br>
-                                        <input value="{{ $product->product_id }}" type="text" placeholder="mã sách"
+                                        <input disabled style="" value="{{ $product->product_id }}" type="text" placeholder="mã sách"
                                             id="masach" class="form-control" name="masach" required autofocus>
 
                                     </div>
@@ -37,7 +37,18 @@
                                             @endforeach
                                         </select>
                                     </div>
+                                    <div class="form-group mb-3">
+                                        <label for="author">Tác giả</label><br><br>
+                                        <input value="{{ $product->author }}" type="text" placeholder="Tên Sách"
+                                            id="author" class="form-control" name="author" required autofocus>
 
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <label for="publish">Xuất bản</label><br><br>
+                                        <input value="{{ $product->publish }}" type="text" placeholder="Tên Sách"
+                                            id="publish" class="form-control" name="publish" required autofocus>
+
+                                    </div>
                                     <div class="form-group mb-3">
                                         <label for="Gia">Giá</label><br><br>
                                         <input value="{{ $product->price }}" type="text" placeholder="Giá" id="Gia"
