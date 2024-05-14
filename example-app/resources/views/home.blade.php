@@ -2,7 +2,6 @@
 
 @section('content')
 
-
 <head>
     <link rel="stylesheet" href="{{asset('css/home.css')}}">
     <style>
@@ -288,7 +287,6 @@
 
                 </div>
 
-
             @endforeach
 
         </div>
@@ -311,4 +309,3 @@
 </body>
 
 @endsection
-

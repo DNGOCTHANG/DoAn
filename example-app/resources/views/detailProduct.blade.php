@@ -2,7 +2,6 @@
 
 @section('content')
 
-
 <head>
     <style>
         body {
@@ -244,4 +243,3 @@
 </main>
 
 @endsection
-

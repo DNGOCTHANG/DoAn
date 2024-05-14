@@ -74,35 +74,27 @@ class CrudUserController extends Controller
         }
 
         return redirect()->route('user.list')->with('success', 'Bạn không được phép truy cập');
-
-     }
-
-
-
-     public function login()
-     {
-         return view('crud_user.login');
-     }
- 
-     public function authUser(Request $request)
-     {
-         $request->validate([
-             'email' => 'required',
-             'password' => 'required',
-         ]);
- 
-         $credentials = $request->only('email', 'password');
- 
-          if (Auth::attempt($credentials)) {
-            if ($credentials['email'] == "admin@gmail.com" ) {
-                return redirect()->intended('list')->withSuccess('Signed in');
-            }
-             return redirect()->intended('home')
-                 ->withSuccess('Signed in')
     }
 
 
 
+    public function login()
+    {
+        return view('crud_user.login');
+    }
+
+    public function authUser(Request $request)
+    {
+        $request->validate([
+            'email' => 'required',
+            'password' => 'required',
+        ]);
+
+        $credentials = $request->only('email', 'password');
+
+        if (Auth::attempt($credentials)) {
+            return redirect()->intended('home')
+                ->withSuccess('Signed in');
         }
         return redirect("login")->withSuccess('Login details are not valid');
     }
