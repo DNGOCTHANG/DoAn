@@ -98,8 +98,8 @@ class CrudUserController extends Controller
                 return redirect()->intended('list')->withSuccess('Signed in');
             }
              return redirect()->intended('home')
-                 ->withSuccess('Signed in')
-    }
+                 ->withSuccess('Signed in');
+    
 
 
 
