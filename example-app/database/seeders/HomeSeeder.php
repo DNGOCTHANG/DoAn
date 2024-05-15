@@ -28,7 +28,7 @@ class HomeSeeder extends Seeder
             'description' => 'Tự truyện của Nemo kể về cuộc hành trình của nemo ...',
             'price' => 100000,
             'category' => 'Phiêu Lưu',
-            'image' => 'sach2.jpg',
+            'image' => 'sach1.jpg',
         ]);
         DB::table('products')->insert([
             'product_id' => 3,
@@ -72,6 +72,70 @@ class HomeSeeder extends Seeder
         ]);
         DB::table('products')->insert([
             'product_id' => 8,
+            'product_name' => 'Bí ẩn về vũ trụ',
+            'description' => 'Tự truyện của Nemo kể về cuộc hành trình của nemo ...',
+            'price' => 100000,
+            'category' => 'khoa học',
+            'image' => 'sach1.jpg',
+        ]);
+        DB::table('products')->insert([
+            'product_id' => 9,
+            'product_name' => 'Tự truyện của Nemo',
+            'description' => 'Tự truyện của Nemo kể về cuộc hành trình của nemo ...',
+            'price' => 100000,
+            'category' => 'Phiêu Lưu',
+            'image' => 'sach1.jpg',
+        ]);
+        DB::table('products')->insert([
+            'product_id' => 10,
+            'product_name' => 'Cuộc phiêu lưu của shabo',
+            'description' => 'Tự truyện của Nemo kể về cuộc hành trình của nemo ...',
+            'price' => 100000,
+            'category' => 'Phiêu Lưu',
+            'image' => 'sach1.jpg',
+        ]);
+        DB::table('products')->insert([
+            'product_id' => 11,
+            'product_name' => 'Qua khứ của chúng ta',
+            'description' => 'Tự truyện của Nemo kể về cuộc hành trình của nemo ...',
+            'price' => 100000,
+            'category' => 'Lãng mạng',
+            'image' => 'sach1.jpg',
+        ]);
+        DB::table('products')->insert([
+            'product_id' => 12,
+            'product_name' => 'Án mạng sau ngọn núi',
+            'description' => 'Tự truyện của Nemo kể về cuộc hành trình của nemo ...',
+            'price' => 100000,
+            'category' => 'trinh thám',
+            'image' => 'sach1.jpg',
+        ]);
+        DB::table('products')->insert([
+            'product_id' => 13,
+            'product_name' => 'Xuyên không trở thành công chúa',
+            'description' => 'Tự truyện của Nemo kể về cuộc hành trình của nemo ...',
+            'price' => 100000,
+            'category' => 'viễn tưởng',
+            'image' => 'sach1.jpg',
+        ]);
+        DB::table('products')->insert([
+            'product_id' => 14,
+            'product_name' => 'Bí ẩn về vũ trụ',
+            'description' => 'Tự truyện của Nemo kể về cuộc hành trình của nemo ...',
+            'price' => 100000,
+            'category' => 'khoa học',
+            'image' => 'sach1.jpg',
+        ]);
+        DB::table('products')->insert([
+            'product_id' => 15,
+            'product_name' => 'Bí ẩn về vũ trụ',
+            'description' => 'Tự truyện của Nemo kể về cuộc hành trình của nemo ...',
+            'price' => 100000,
+            'category' => 'khoa học',
+            'image' => 'sach1.jpg',
+        ]);
+        DB::table('products')->insert([
+            'product_id' => 16,
             'product_name' => 'Bí ẩn về vũ trụ',
             'description' => 'Tự truyện của Nemo kể về cuộc hành trình của nemo ...',
             'price' => 100000,
