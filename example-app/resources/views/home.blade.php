@@ -163,7 +163,6 @@
             border-radius: 5px;
             box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
             transition: bottom 0.3s ease;
-            /* Thêm transition cho bottom để tạo hiệu ứng mềm mại */
         }
 
         .chat-header {
@@ -174,7 +173,6 @@
             border-top-left-radius: 5px;
             border-top-right-radius: 5px;
             cursor: pointer;
-            /* Đổi con trỏ khi di chuột qua */
         }
 
         .chat-window {
@@ -186,6 +184,35 @@
             list-style: none;
             margin: 0;
             padding: 0;
+        }
+
+        .message {
+            display: flex;
+            padding: 5px 10px;
+            margin-bottom: 10px;
+        }
+
+        .message.user-message {
+            justify-content: flex-end;
+        }
+
+        .message.user-message .message-text {
+            background-color: #0084FF;
+            color: white;
+            border-radius: 18px 18px 0 18px;
+        }
+
+        .message.system-message .message-text {
+            background-color: #f1f0f0;
+            color: black;
+            border-radius: 18px 18px 18px 0;
+        }
+
+        .message-text {
+            max-width: 200px;
+            padding: 10px;
+            font-size: 14px;
+            line-height: 1.4;
         }
 
         .chat-input {
@@ -214,21 +241,19 @@
         }
 
         .send-button:hover {
-            background-color: rgb(255, 255, 255);
-            color: rgb(0, 0, 0);
+            background-color: #fff;
+            color: #000;
             box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
         }
 
         .chat-window,
         .chat-input {
             display: none;
-            /* Ẩn chat window và chat input khi chưa được kích hoạt */
         }
 
         .active .chat-window,
         .active .chat-input {
             display: block;
-            /* Hiện chat window và chat input khi có lớp active */
         }
 
         .card.active {
@@ -241,7 +266,6 @@
 
         .card.hidden {
             bottom: -220px;
-            /* Đặt bottom thành giá trị âm khi ẩn */
         }
     </style>
     <script>
@@ -249,15 +273,52 @@
             var card = document.querySelector('.card');
             card.classList.toggle('active');
 
-            // Kiểm tra xem chat header có lớp 'active' hay không
             if (card.classList.contains('active')) {
-                card.classList.remove('hidden'); // Loại bỏ lớp 'hidden' nếu chat header được hiển thị
-                card.style.bottom = "20px"; // Đặt bottom thành giá trị mong muốn khi hiển thị
+                card.classList.remove('hidden');
+                card.style.bottom = "20px";
             } else {
-                card.classList.add('hidden'); // Thêm lớp 'hidden' nếu chat header được ẩn
-                card.style.bottom = "-220px"; // Đặt bottom thành giá trị mong muốn khi ẩn
+                card.classList.add('hidden');
+                card.style.bottom = "-220px";
             }
         }
+
+        function sendMessage() {
+            var messageInput = document.querySelector('.message-input');
+            var messageList = document.querySelector('.message-list');
+            var userMessage = messageInput.value.trim();
+
+            if (userMessage) {
+                var userMessageElement = document.createElement('li');
+                userMessageElement.classList.add('message', 'user-message');
+                userMessageElement.innerHTML = `<div class="message-text">${userMessage}</div>`;
+                messageList.appendChild(userMessageElement);
+
+                messageInput.value = '';
+                userMessageElement.scrollIntoView({ behavior: 'smooth' });
+
+                // Thêm độ trễ 3-4 giây trước khi thêm tin nhắn phản hồi
+                setTimeout(function () {
+                    var responseMessageElement = document.createElement('li');
+                    responseMessageElement.classList.add('message', 'system-message');
+                    responseMessageElement.innerHTML = '<div class="message-text">Hiện tại nhân viên hỗ trợ đang bận, vui lòng chờ đợi</div>';
+                    messageList.appendChild(responseMessageElement);
+                    responseMessageElement.scrollIntoView({ behavior: 'smooth' });
+                }, 3000); // Độ trễ 3000ms = 3 giây
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var sendButton = document.querySelector('.send-button');
+            sendButton.addEventListener('click', sendMessage);
+
+            var messageInput = document.querySelector('.message-input');
+            messageInput.addEventListener('keypress', function (e) {
+                if (e.key === 'Enter') {
+                    sendMessage();
+                }
+            });
+        });
+
     </script>
 </head>
 
