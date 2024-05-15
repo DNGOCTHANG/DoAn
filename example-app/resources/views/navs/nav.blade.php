@@ -50,10 +50,10 @@
                     @endguest
                 </a>
 
-                <a id="carts" href="{{ route('user.list') }}">
+                {{-- <a id="carts" href="{{ route('user.list') }}">
                     <i class="fa fa-user" aria-hidden="true"></i>
                     tài khoản
-                    </>
+                    </> --}}
 
             </div>
 
