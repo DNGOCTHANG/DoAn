@@ -65,4 +65,5 @@ Route::get('forgot-password', [CrudUserController::class, 'showUpdatePasswordFor
 Route::post('forgot-password', [CrudUserController::class, 'forgotPassword'])->name('forgot.password');
 
 
-Route::post('submit-review', [ReviewController::class, 'submitReview'])->name('submitReview');
+Route::post('/submit-review', 'ReviewController@submitReview')->name('submitReview');
+

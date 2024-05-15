@@ -181,6 +181,11 @@
             /* Khoảng cách giữa các phần tử con */
         }
     </style>
+    <script>
+        function addToCart() {
+            alert("Sản phẩm đã được thêm vào giỏ hàng thành công!");
+        }
+    </script>
 </head>
 <main>
 
@@ -198,7 +203,7 @@
                         <p>price: {{ $product->price }}</p>
                         <p>category: {{ $product->category }}</p>
                         <form action="{{ route('addToCart', ['id' => $product->product_id]) }}" method="GET">
-                            <button id="Home-cart">
+                            <button id="Home-cart" onclick="addToCart()">
                                 <input type="hidden" name="product_id" value="{{ $product->id }}">
                                 <i class="fa fa-shopping-basket" aria-hidden="true"></i>
                             </button>
