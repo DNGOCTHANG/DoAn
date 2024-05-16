@@ -4,6 +4,13 @@ use App\Http\Controllers\Controllers;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CrudUserController;
 use App\Http\Controllers\favorite;
+use App\Http\Controllers\ReviewController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\CartController;
+use App\Http\Controllers\CheckoutController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -65,5 +72,25 @@ Route::get('forgot-password', [CrudUserController::class, 'showUpdatePasswordFor
 Route::post('forgot-password', [CrudUserController::class, 'forgotPassword'])->name('forgot.password');
 
 
-Route::post('/submit-review', 'ReviewController@submitReview')->name('submitReview');
+// Route::post('/submit-review', 'ReviewController@submitReview')->name('submitReview');
 
+
+Route::get('/product/{id}', [ReviewController::class, 'show'])->name('product.show');
+Route::post('/submitReview', [ReviewController::class, 'store'])->name('submitReview');
+
+
+Route::get('/product/{id}', [ProductController::class, 'show'])->name('product.show');
+
+
+Route::get('/payment', [PaymentController::class, 'showPaymentForm'])->name('payment.form');
+Route::post('/payment/process', [PaymentController::class, 'processPayment'])->name('payment.process');
+
+// Route::get('/cart', [CartController::class, 'showCart'])->name('cart.show');
+// Route::post('/checkout', [CartController::class, 'checkout'])->name('cart.checkout');
+
+Route::post('/checkout/pay', [CheckoutController::class, 'index'])->name('checkout.pay');
+Route::post('/checkout/process', [CheckoutController::class, 'processCheckout'])->name('processCheckout');
+Route::get('/checkout/success', [CheckoutController::class, 'success'])->name('checkout.success');
+Route::get('/payments', [CheckoutController::class, 'showPayments'])->name('payments.show');
+
+Route::get('/order-status', [CheckoutController::class, 'orderStatus'])->name('order.status');
