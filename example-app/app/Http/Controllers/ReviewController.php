@@ -1,29 +1,35 @@
 <?php
+
 namespace App\Http\Controllers;
 
-use App\Models\User;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Session;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use App\Models\Product;
 use App\Models\Review;
 
 class ReviewController extends Controller
 {
-    public function submitReview(Request $request)
+    public function show($id)
+    {
+        $product = Product::findOrFail($id);
+        $reviews = Review::where('product_id', $id)->get();
+
+        return view('detailProduct', compact('product', 'reviews'));
+    }
+
+    public function store(Request $request)
     {
         $request->validate([
-            'rating' => 'required|integer|between:1,5',
-            'comment' => 'nullable|string|max:255',
+            'rate' => 'required|integer|min:1|max:5',
+            'comment' => 'required|string|max:255',
+            'product_id' => 'required|integer|exists:products,product_id',
         ]);
 
-        // Lưu đánh giá vào cơ sở dữ liệu
-        $review = new Review();
-        $review->rating = $request->rating;
-        $review->comment = $request->comment;
-        $review->save();
+        Review::create([
+            'rate' => $request->rate,
+            'comment' => $request->comment,
+            'product_id' => $request->product_id,
+        ]);
 
-        // Redirect hoặc thực hiện các hành động khác sau khi lưu đánh giá thành công
-        return redirect()->back()->with('success', 'Đánh giá của bạn đã được gửi.');
+        return redirect()->route('product.show', $request->product_id);
     }
 }

@@ -28,7 +28,12 @@
                             style="color: white"> Tìm kiếm</i></button>
                 </form>
             </div>
+            <!-- <a id="carts" href="{{ route('order.status') }}">
+                <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                Tình Trạng Đặt Hàng
+            </a> -->
             <div class="btn-go">
+
                 <a id="carts" href="{{ route('cart') }}">
                     <i class="fa fa-shopping-basket" aria-hidden="true"></i>
                     Giỏ Hàng
@@ -53,8 +58,12 @@
                 {{-- <a id="carts" href="{{ route('user.list') }}">
                     <i class="fa fa-user" aria-hidden="true"></i>
                     tài khoản
+<<<<<<< HEAD
                     </> --}}
 
+=======
+                </a>
+>>>>>>> TienPhu
             </div>
 
 
