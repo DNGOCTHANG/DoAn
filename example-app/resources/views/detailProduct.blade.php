@@ -203,7 +203,13 @@
                         style="width: 300px; height: 300px; margin-right: 20px; border: 5px rgb(0, 249, 54) double">
                     <div style="float: right;">
                         <h3> {{ $product->product_name }}</h3>
-                        <p>Mô tả: {{ $product->description }}</p>
+
+                        <p>Giá: {{ $product->price }}</p>
+                        <p>Thể loại: {{ $product->category }}</p>
+                        <p>Tác giả: {{ $product->author }}</p>
+                        <p>Năm xuất bản: {{ $product->publish }}</p>
+
+                       <p>Mô tả: {{ $product->description }}</p>
                         <p>Giá: {{ $product->price }}</p>
                         <p>Danh mục: {{ $product->category }}</p>
                         <form action="{{ route('addToCart', ['id' => $product->product_id]) }}" method="GET">

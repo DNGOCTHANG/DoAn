@@ -19,6 +19,8 @@ class HomeSeeder extends Seeder
             'product_name' => 'Tự truyện của Nemo',
             'description' => 'Tự truyện của Nemo kể về cuộc hành trình của nemo ...',
             'price' => 100000,
+            'author' => 'Trần Văn Thành Nam',
+            'publish' => 2013,
             'category' => 'Phiêu Lưu',
             'image' => 'sach1.jpg',
         ]);
@@ -27,6 +29,8 @@ class HomeSeeder extends Seeder
             'product_name' => 'Cuộc phiêu lưu của shabo',
             'description' => 'Tự truyện của Nemo kể về cuộc hành trình của nemo ...',
             'price' => 100000,
+            'author' => 'Trần Văn Thành Nam',
+            'publish' => 2013,
             'category' => 'Phiêu Lưu',
             'image' => 'sach1.jpg',
         ]);
@@ -35,6 +39,8 @@ class HomeSeeder extends Seeder
             'product_name' => 'Qua khứ của chúng ta',
             'description' => 'Tự truyện của Nemo kể về cuộc hành trình của nemo ...',
             'price' => 100000,
+            'author' => 'Trần Văn Thành Nam',
+            'publish' => 2013,
             'category' => 'Lãng mạng',
             'image' => 'sach1.jpg',
         ]);
@@ -43,6 +49,8 @@ class HomeSeeder extends Seeder
             'product_name' => 'Án mạng sau ngọn núi',
             'description' => 'Tự truyện của Nemo kể về cuộc hành trình của nemo ...',
             'price' => 100000,
+            'author' => 'Trần Văn Thành Nam',
+            'publish' => 2013,
             'category' => 'trinh thám',
             'image' => 'sach1.jpg',
         ]);
@@ -51,6 +59,8 @@ class HomeSeeder extends Seeder
             'product_name' => 'Xuyên không trở thành công chúa',
             'description' => 'Tự truyện của Nemo kể về cuộc hành trình của nemo ...',
             'price' => 100000,
+            'author' => 'Trần Văn Thành Nam',
+            'publish' => 2013,
             'category' => 'viễn tưởng',
             'image' => 'sach1.jpg',
         ]);
@@ -59,6 +69,8 @@ class HomeSeeder extends Seeder
             'product_name' => 'Bí ẩn về vũ trụ',
             'description' => 'Tự truyện của Nemo kể về cuộc hành trình của nemo ...',
             'price' => 100000,
+            'author' => 'Trần Văn Thành Nam',
+            'publish' => 2013,
             'category' => 'khoa học',
             'image' => 'sach1.jpg',
         ]);
@@ -67,6 +79,8 @@ class HomeSeeder extends Seeder
             'product_name' => 'Bí ẩn về vũ trụ',
             'description' => 'Tự truyện của Nemo kể về cuộc hành trình của nemo ...',
             'price' => 100000,
+            'author' => 'Trần Văn Thành Nam',
+            'publish' => 2013,
             'category' => 'khoa học',
             'image' => 'sach1.jpg',
         ]);
@@ -75,6 +89,8 @@ class HomeSeeder extends Seeder
             'product_name' => 'Bí ẩn về vũ trụ',
             'description' => 'Tự truyện của Nemo kể về cuộc hành trình của nemo ...',
             'price' => 100000,
+            'author' => 'Trần Văn Thành Nam',
+            'publish' => 2013,
             'category' => 'khoa học',
             'image' => 'sach1.jpg',
         ]);
@@ -83,6 +99,8 @@ class HomeSeeder extends Seeder
             'product_name' => 'Tự truyện của Nemo',
             'description' => 'Tự truyện của Nemo kể về cuộc hành trình của nemo ...',
             'price' => 100000,
+            'author' => 'Trần Văn Thành Nam',
+            'publish' => 2013,
             'category' => 'Phiêu Lưu',
             'image' => 'sach1.jpg',
         ]);
@@ -91,6 +109,8 @@ class HomeSeeder extends Seeder
             'product_name' => 'Cuộc phiêu lưu của shabo',
             'description' => 'Tự truyện của Nemo kể về cuộc hành trình của nemo ...',
             'price' => 100000,
+            'author' => 'Trần Văn Thành Nam',
+            'publish' => 2013,
             'category' => 'Phiêu Lưu',
             'image' => 'sach1.jpg',
         ]);
@@ -99,6 +119,8 @@ class HomeSeeder extends Seeder
             'product_name' => 'Qua khứ của chúng ta',
             'description' => 'Tự truyện của Nemo kể về cuộc hành trình của nemo ...',
             'price' => 100000,
+            'author' => 'Trần Văn Thành Nam',
+            'publish' => 2013,
             'category' => 'Lãng mạng',
             'image' => 'sach1.jpg',
         ]);
@@ -107,6 +129,8 @@ class HomeSeeder extends Seeder
             'product_name' => 'Án mạng sau ngọn núi',
             'description' => 'Tự truyện của Nemo kể về cuộc hành trình của nemo ...',
             'price' => 100000,
+            'author' => 'Trần Văn Thành Nam',
+            'publish' => 2013,
             'category' => 'trinh thám',
             'image' => 'sach1.jpg',
         ]);
@@ -115,6 +139,8 @@ class HomeSeeder extends Seeder
             'product_name' => 'Xuyên không trở thành công chúa',
             'description' => 'Tự truyện của Nemo kể về cuộc hành trình của nemo ...',
             'price' => 100000,
+            'author' => 'Trần Văn Thành Nam',
+            'publish' => 2013,
             'category' => 'viễn tưởng',
             'image' => 'sach1.jpg',
         ]);
@@ -123,6 +149,8 @@ class HomeSeeder extends Seeder
             'product_name' => 'Bí ẩn về vũ trụ',
             'description' => 'Tự truyện của Nemo kể về cuộc hành trình của nemo ...',
             'price' => 100000,
+            'author' => 'Trần Văn Thành Nam',
+            'publish' => 2013,
             'category' => 'khoa học',
             'image' => 'sach1.jpg',
         ]);
@@ -131,6 +159,8 @@ class HomeSeeder extends Seeder
             'product_name' => 'Bí ẩn về vũ trụ',
             'description' => 'Tự truyện của Nemo kể về cuộc hành trình của nemo ...',
             'price' => 100000,
+            'author' => 'Trần Văn Thành Nam',
+            'publish' => 2013,
             'category' => 'khoa học',
             'image' => 'sach1.jpg',
         ]);
@@ -139,6 +169,8 @@ class HomeSeeder extends Seeder
             'product_name' => 'Bí ẩn về vũ trụ',
             'description' => 'Tự truyện của Nemo kể về cuộc hành trình của nemo ...',
             'price' => 100000,
+            'author' => 'Trần Văn Thành Nam',
+            'publish' => 2013,
             'category' => 'khoa học',
             'image' => 'sach1.jpg',
         ]);

@@ -30,10 +30,24 @@
                                         <select type="text" placeholder="Thể loại" id="idLoai" class="form-control"
                                             name="idLoai" required autofocus>
                                             <?php $loaisp = \App\Models\theLoai::all(); ?>
+                                            <option></option>
                                             @foreach ($loaisp as $loai)
+                                           
                                                 <option value="{{ $loai->name }}"> {{ $loai->name }}</option>
                                             @endforeach
                                         </select>
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <label for="author">Tác giả</label><br><br>
+                                        <input type="text" placeholder="Tác Giả" id="author" class="form-control"
+                                            name="author" required autofocus>
+
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <label for="publish">Xuất bản</label><br><br>
+                                        <input type="text" placeholder="Xuất bản" id="publish" class="form-control"
+                                            name="publish" required autofocus>
+
                                     </div>
 
                                     <div class="form-group mb-3">

@@ -33,6 +33,8 @@ class CrudProductController extends Controller
             'masach' => 'required',
             'name' => 'required',
             'idLoai' => 'required',
+            'author' => 'required',
+            'publish' => 'required',
             'Gia' => 'required',
             'mota' => 'required',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
@@ -48,6 +50,8 @@ class CrudProductController extends Controller
             $product->product_id = $request->input('masach');
             $product->product_name = $request->input('name');
             $product->category = $request->input('idLoai');
+            $product->author = $request->input('author');
+            $product->publish = $request->input('publish');
             $product->price = $request->input('Gia');
             $product->description = $request->input('mota');
             $product->image = $imageName; // Bạn đã lấy giá trị imageName ở trên
@@ -84,6 +88,8 @@ class CrudProductController extends Controller
             'masach' => 'required',
             'name' => 'required',
             'idLoai' => 'required',
+            'author' => 'required',
+            'publish' => 'required',
             'Gia' => 'required',
             'mota' => 'required',
             'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048', // Không yêu cầu image bắt buộc
@@ -93,6 +99,8 @@ class CrudProductController extends Controller
         $product->product_id = $request->input('masach');
         $product->product_name = $request->input('name');
         $product->category = $request->input('idLoai');
+        $product->author = $request->input('author');
+        $product->publish = $request->input('publish');
         $product->price = $request->input('Gia');
         $product->description = $request->input('mota');
         if ($request->hasFile('image')) {
