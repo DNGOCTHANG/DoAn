@@ -83,15 +83,9 @@ Route::put('/products/{id}', [CrudProductController::class,'updateProduct'])->na
 Route::get('forgot-password', [CrudUserController::class, 'showUpdatePasswordForm'])->name('crud_user.forgot_password');
 Route::post('forgot-password', [CrudUserController::class, 'forgotPassword'])->name('forgot.password');
 
-//Route::post('submit-review', [ReviewController::class, 'submitReview'])->name('submitReview');
+Route::post('submit-review', [ReviewController::class, 'submitReview'])->name('submitReview');
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-Route::post('/submit-review', 'ReviewController@submitReview')->name('submitReview');
 
-=======
->>>>>>> origin/main
-=======
 // Route::post('/submit-review', 'ReviewController@submitReview')->name('submitReview');
 
 
@@ -114,4 +108,4 @@ Route::get('/checkout/success', [CheckoutController::class, 'success'])->name('c
 Route::get('/payments', [CheckoutController::class, 'showPayments'])->name('payments.show');
 
 Route::get('/order-status', [CheckoutController::class, 'orderStatus'])->name('order.status');
->>>>>>> TienPhu
+

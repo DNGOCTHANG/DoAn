@@ -76,8 +76,8 @@
             padding: 20px;
             color: #fff;
             text-align: center;
-            position: fixed;
-            bottom: 0;
+            position: absolute;
+            bottom: -260px;
             left: 0;
             right: 0;
 
@@ -204,14 +204,14 @@
                     <div style="float: right;">
                         <h3> {{ $product->product_name }}</h3>
 
-                        <p>Giá: {{ $product->price }}</p>
+                       
                         <p>Thể loại: {{ $product->category }}</p>
                         <p>Tác giả: {{ $product->author }}</p>
                         <p>Năm xuất bản: {{ $product->publish }}</p>
 
                        <p>Mô tả: {{ $product->description }}</p>
                         <p>Giá: {{ $product->price }}</p>
-                        <p>Danh mục: {{ $product->category }}</p>
+                       
                         <form action="{{ route('addToCart', ['id' => $product->product_id]) }}" method="GET">
                             <button id="Home-cart" onclick="addToCart()">
                                 <input type="hidden" name="product_id" value="{{ $product->id }}">
@@ -230,7 +230,7 @@
                         @csrf
                         <input type="hidden" name="product_id" value="{{ $product->product_id }}">
                         <div class="form-group">
-                            <label for="rating">Đánh giá:</label><br>
+                           
                             <div class="rating">
                                 <input value="5" name="rate" id="star5" type="radio">
                                 <label title="text" for="star5"></label>
@@ -266,11 +266,11 @@
                         @endforeach
                     </div> -->
                     <div id="comments-section">
-                        <h3>Đánh giá:</h3>
+                      
                         @foreach($reviews as $review)
                             @if($review->product_id == $product->id)
                                 <div class="comment">
-                                    <p><strong>Đánh giá:</strong>
+                                    <p>
                                         @for ($i = 0; $i < $review->rate; $i++)
                                             <span class="fas fa-star text-warning"></span>
                                         @endfor

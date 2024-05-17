@@ -35,7 +35,7 @@ class Favorities extends Model
         'comment',
         
     ];
-
+}
 
 class Review extends Model
 {

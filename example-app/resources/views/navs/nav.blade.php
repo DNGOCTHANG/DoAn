@@ -58,12 +58,12 @@
                 {{-- <a id="carts" href="{{ route('user.list') }}">
                     <i class="fa fa-user" aria-hidden="true"></i>
                     tài khoản
-<<<<<<< HEAD
+
                     </> --}}
 
-=======
+
                 </a>
->>>>>>> TienPhu
+
             </div>
 
 
