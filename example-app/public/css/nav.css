@@ -10,6 +10,8 @@ li {
 }
 
 /* header */
+
+
 .content-nav {
     padding: 15px;
     width: 100%;
@@ -30,14 +32,14 @@ li {
     flex-direction: row;
     justify-content: flex-end;
     width: 60%;
-    
+
 }
 
- .content-nav ul {
+.content-nav ul {
     display: flex;
 }
 
- .content-nav ul li a {
+.content-nav ul li a {
     text-decoration: none;
     color: #ffffff;
     text-transform: uppercase;
@@ -45,7 +47,7 @@ li {
     font-weight: 800;
 }
 
- .content-nav ul li a:hover {
+.content-nav ul li a:hover {
     color: #eb4545;
 }
 
@@ -61,10 +63,11 @@ li {
     padding-left: 30%;
 
 }
+
 .content-navs form {
     position: relative;
     margin-top: 10px;
-    
+
 
 }
 
@@ -80,7 +83,7 @@ li {
 .content-navs form .btn-search {
     width: 100px;
     background-color: #4caf4f00;
-  
+
     height: 40px;
     padding: 0px;
     border-radius: 12px;
@@ -90,13 +93,15 @@ li {
     bottom: -3px;
     border: none;
     outline: none;
-   
-    
+
+
 }
-.content-navs form .btn-search:hover{
+
+.content-navs form .btn-search:hover {
     background-color: #5f69f2;
     border-color: #fff;
 }
+
 /* modal */
 .modal {
     display: none;
@@ -214,17 +219,19 @@ h5.modal-title {
     margin-right: 15px;
     text-decoration: none;
 }
-#carts:nth-child(2){
+
+#carts:nth-child(2) {
     position: absolute;
     right: 0;
     margin-right: 120px;
 }
 
-#carts:nth-child(3){
+#carts:nth-child(3) {
     position: absolute;
     right: 0;
     margin-right: 240px;
 }
+
 #carts:hover {
     border-color: #fff;
 }
@@ -260,13 +267,14 @@ h5.modal-title {
 
 /* footer */
 
+
 footer {
     background-color: #176988;
     padding: 20px;
     color: #fff;
     text-align: center;
     position: relative;
-    bottom: 0;
+    bottom: -260px;
     left: 0;
     right: 0;
 
@@ -322,7 +330,7 @@ footer {
 }
 
 .nav-top {
-    
+
     padding: 15px;
     width: 100%;
     display: flex;
