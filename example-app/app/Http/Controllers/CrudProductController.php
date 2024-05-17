@@ -94,7 +94,7 @@ class CrudProductController extends Controller
             'mota' => 'required',
             'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048', // Không yêu cầu image bắt buộc
         ]);
-
+    
         $product = Product::findOrFail($id);
         $product->product_id = $request->input('masach');
         $product->product_name = $request->input('name');
@@ -103,14 +103,16 @@ class CrudProductController extends Controller
         $product->publish = $request->input('publish');
         $product->price = $request->input('Gia');
         $product->description = $request->input('mota');
+        
         if ($request->hasFile('image')) {
             $imageName = time() . '_' . $request->image->getClientOriginalName();
             $request->image->move(public_path('images'), $imageName);
             $product->image = $imageName;
         }
-
+    
         $product->save();
-
+    
         return redirect()->route('product.list')->with('success', 'Sản phẩm đã được cập nhật thành công');
     }
+    
 }

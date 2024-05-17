@@ -279,7 +279,7 @@
                 card.style.bottom = "20px";
             } else {
                 card.classList.add('hidden');
-                card.style.bottom = "-220px";
+                card.style.bottom = "-5px";
             }
         }
 

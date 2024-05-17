@@ -16,19 +16,24 @@
                                     @csrf
                                     <div class="form-group mb-3">
                                         <label for="masach">mã sách</label><br><br>
-                                        <input disabled style="" value="{{ $product->product_id }}" type="text" placeholder="mã sách"
+                                        {{-- <input disabled style="" value="{{ $product->product_id }}" type="text" placeholder="mã sách"
+                                            id="masach" class="form-control" name="masach" required autofocus> --}}
+                                        <input  value="{{ $product->product_id }}" type="text" placeholder="mã sách"
                                             id="masach" class="form-control" name="masach" required autofocus>
 
                                     </div>
                                     <div class="form-group mb-3">
                                         <label for="name">Tên Sách</label><br><br>
+                                        {{-- <input value="{{ $product->product_name }}" type="text" placeholder="Tên Sách"
+                                            id="name" class="form-control" name="name" required autofocus> --}}
                                         <input value="{{ $product->product_name }}" type="text" placeholder="Tên Sách"
                                             id="name" class="form-control" name="name" required autofocus>
-
                                     </div>
                                     <div class="form-group mb-3">
                                         <label for="idLoai">Thể loại</label><br><br>
-                                        <select value="{{ $product->category }}" type="text" placeholder="Thể loại"
+                                        {{-- <select value="{{ $product->category }}" type="text" placeholder="Thể loại" --}}
+                                        <select type="text" placeholder="Thể loại" id="idLoai" class="form-control"
+                                            name="idLoai" required autofocus>
                                             id="idLoai" class="form-control" name="idLoai" required autofocus>
                                             <?php $loaisp = \App\Models\theLoai::all(); ?>
                                             <option>{{ $product->category }}</option>
