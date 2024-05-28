@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Controllers;
+use App\Http\Controllers\CrudProductController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CrudUserController;
 use App\Http\Controllers\favorite;
@@ -36,6 +37,7 @@ Route::get('signout', [CrudUserController::class, 'signOut'])->name('signout');
 
 
 Route::get('dashboard', [CrudUserController::class, 'dashboard']);
+
 Route::get('create', [CrudUserController::class, 'createUser'])->name('user.createUser');
 Route::post('create', [CrudUserController::class, 'postUser'])->name('user.postUser');
 
@@ -68,8 +70,20 @@ Route::get('cartfovorite', [favorite::class, 'showFavorites'])->name('cartfovori
 Route::get('delete-cartfovorite/{id}', [favorite::class, 'deleteFavorite'])->name('deleteFavorite');
 Route::get('phantrang', [Controllers::class, 'index'])->name('phantrang');
 
+
+Route::get('listproduct', [CrudProductController::class, 'listproduct'])->name('product.list');
+
+Route::get('add-product', [CrudProductController::class, 'addproduct'])->name('product.add');
+Route::post('add-product', [CrudProductController::class, 'postProduct'])->name('user.postProduct');
+Route::get('delete-product', [CrudProductController::class, 'deleteProduct'])->name('product.deleteProduct');
+
+Route::get('/products/{id}/edit', [CrudProductController::class,'editProduct'])->name('product.edit');
+Route::put('/products/{id}', [CrudProductController::class,'updateProduct'])->name('product.update');
+
 Route::get('forgot-password', [CrudUserController::class, 'showUpdatePasswordForm'])->name('crud_user.forgot_password');
 Route::post('forgot-password', [CrudUserController::class, 'forgotPassword'])->name('forgot.password');
+
+//Route::post('submit-review', [ReviewController::class, 'submitReview'])->name('submitReview');
 
 
 // Route::post('/submit-review', 'ReviewController@submitReview')->name('submitReview');
@@ -94,3 +108,4 @@ Route::get('/checkout/success', [CheckoutController::class, 'success'])->name('c
 Route::get('/payments', [CheckoutController::class, 'showPayments'])->name('payments.show');
 
 Route::get('/order-status', [CheckoutController::class, 'orderStatus'])->name('order.status');
+

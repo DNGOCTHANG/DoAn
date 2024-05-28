@@ -93,6 +93,9 @@ class CrudUserController extends Controller
         $credentials = $request->only('email', 'password');
 
         if (Auth::attempt($credentials)) {
+            if ($credentials['email'] == "admin@gmail.com") {
+                return redirect()->intended('list')->withSuccess('Signed in');
+            }
             return redirect()->intended('home')
                 ->withSuccess('Signed in');
         }

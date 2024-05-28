@@ -2,6 +2,7 @@
 
 @section('content')
 
+
 <head>
     <link rel="stylesheet" href="{{asset('css/home.css')}}">
     <style>
@@ -278,7 +279,7 @@
                 card.style.bottom = "20px";
             } else {
                 card.classList.add('hidden');
-                card.style.bottom = "-220px";
+                card.style.bottom = "-5px";
             }
         }
 
@@ -348,6 +349,7 @@
 
                 </div>
 
+
             @endforeach
 
         </div>
@@ -370,3 +372,4 @@
 </body>
 
 @endsection
+

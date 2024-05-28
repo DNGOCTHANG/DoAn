@@ -184,7 +184,7 @@ class Controllers extends Controller
     }
     public function index(){
        
-        $products = Product::paginate(4);
+        $products = Product::paginate(8);
         return view('home', ['products' => $products]);
     }
     
